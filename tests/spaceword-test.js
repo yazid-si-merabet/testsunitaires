@@ -154,9 +154,11 @@ function generateString(length) {
 const test12 = generateString(10);
   if (test12.length === 10) {
     console.log("test réussi: generateString1");
+  } else {
+
+    console.error("test échoué: generateString1");
+    process.exit(1);
   }
-  console.error("test échoué: generateString1");
-  process.exit(1);
 
 
 //aaa
