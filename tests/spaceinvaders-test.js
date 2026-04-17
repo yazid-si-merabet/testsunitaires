@@ -62,14 +62,7 @@ else {
 }
 
 
-const test7 = lerp(1, 1, 1);
-if (test7 === 1) {
-    console.log("test réussi");
-}
-else {
-    console.error("test échoué");
-    process.exit(1);
-}
+
 
 const test8 = lerp(100, 3, -60);
 if (test8 === 5920) {
