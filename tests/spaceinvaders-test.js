@@ -124,6 +124,10 @@ else {
     process.exit(1);
 }
 
+export function magnitude(vector) {
+  return Math.sqrt(Math.pow(vector.x, 2) + Math.pow(vector.y, 2));
+}
+
 export function normalize(vector) {
   const mag = magnitude(vector);
   return {
