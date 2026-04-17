@@ -169,9 +169,11 @@ export function add(a, b) {
 const test15 = add({ x: 5, y: 50 },{ x: 10, y: 100 });
 if (test15.x === 15 && test15.y === 150) {
     console.log("test add1 réussi");
+} else {
+
+    console.error("test add1 échoué");
+    process.exit(1);
 }
-console.error("test add1 échoué");
-process.exit(1);
 
 
 export function subtract(a, b) {
