@@ -42,9 +42,11 @@ const test3 = rectIntersect(1,1,2,1,4,1,1,2);
  const test4 = rectIntersect(1,1,5,2,4,1,1,2); 
     if (test4 === true) {
       console.log("test réussi: rectIntersect2");
+    } else {
+
+      console.error("test échoué: rectIntersect2");
+      process.exit(1);
     }
-    console.error("test échoué: rectIntersect2");
-    process.exit(1);
 
 
     function circleIntersect(x1, y1, r1, x2, y2, r2) {
