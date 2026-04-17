@@ -139,9 +139,11 @@ export function normalize(vector) {
 const test13 = normalize({ x: 5, y: 50 });
 if (test13.x ===  0.09950371902099892 && test13.y === 0.9950371902099892) {
     console.log("test normalize1 réussi");
+} else {
+
+    console.error("test normalize1 échoué");
+    process.exit(1);
 }
-console.error("test normalize1 échoué");
-process.exit(1);
 
 
 export function dot(a, b) {
