@@ -139,4 +139,22 @@ else {
   console.error("test échoué timeToString2");
 }
 
+function generateString(length) {
+    let result = '';
+    const charactersLength = characters.length;
+    for ( let i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+
+    return result;
+}
+
+const test12 = generateString(10);
+  if (test12 === 10) {
+    console.log("test réussi: generateString1");
+  }
+  console.error("test échoué: generateString1");
+  process.exit(1);
+
+
 //aaa
