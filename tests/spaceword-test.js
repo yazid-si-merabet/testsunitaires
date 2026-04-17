@@ -77,9 +77,11 @@ else {
 const test7 = getRandomInt(50, 50)
 if (test7 === 50) {
   console.log("test réussi: getRandomInt3 ");
+} else {
+
+  console.error("test échoué: getRandomInt3");
+  process.exit(1);
 }
-console.error("test échoué: getRandomInt3");
-process.exit(1);
 
 
 const test8 = rectIntersect(1,1,1,1,2,2,2,2);
