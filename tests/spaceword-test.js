@@ -7,18 +7,18 @@ function getRandomInt(min, max) {
 
 const test1 = getRandomInt(-42, 42); 
     if (test1 < 43) {
-        console.log("test réussi");
+        console.log("test réussi getRandomInt1");
     } 
     else {
-        console.error("test échoué");
+        console.error("test échoué: getRandomInt1");
     }
 
 const test2 = getRandomInt(42, 42);
   if (test2 === 42) {
-    console.log("test réussi")
+    console.log("test réussi: getRandomInt2")
   }
   else {
-    console.error("test échoué")
+    console.error("test échoué getRandomInt2")
   }
 
   
@@ -31,19 +31,19 @@ const test2 = getRandomInt(42, 42);
 
 const test3 = rectIntersect(1,1,2,1,4,1,1,2);
   if (test3 === false) {
-    console.log("test réussi");
+    console.log("test réussi: rectIntersect1");
   }
   else {
-    console.error("test échoué");
+    console.error("test échoué: rectIntersect1");
     process.exit(1);
   }
 
 
  const test4 = rectIntersect(1,1,5,2,4,1,1,2); 
     if (test4 === true) {
-      console.log("test réussi: collision");
+      console.log("test réussi: rectIntersect2");
     }
-    console.error("test échoué");
+    console.error("test échoué: rectIntersect2");
     process.exit(1);
 
 
@@ -54,38 +54,47 @@ const test3 = rectIntersect(1,1,2,1,4,1,1,2);
 
 
 const test5 = circleIntersect(3,2,1,6,1,1.5);
-let squareDistance1 = (3-6) * (3-6) + (2-1) * (2-1);
-return squareDistance <= ((1 + 1.5) * (1 + 1.5))
+if (test5 === false) {
+  console.log("test réussi: circleIntersect1");
+} else {
+  console.error("test échoué: circleIntersect1");
+  process.exit(1);
+}
 
 
-const test6 = circleIntersect(1,1,5,2,4,1,1,2);
-let squareDistance2 = (1-2) * (1-2) + (1-1) * (1-1);
-return squareDistance <= ((5 + 2) * (5 + 2))
+const test6 = circleIntersect(3,2,1,3,-2,4);
+if (test6 === true) {
+  console.log("test réussi: circleIntersect2");
+}
+else {
+  console.error("test échoué: circleIntersect2");
+  process.exit(1);
+}
 
 
 const test7 = getRandomInt(50, 50)
 if (test7 === 50) {
-  console.log("test réussi");
+  console.log("test réussi: getRandomInt3 ");
 }
-console.error("test échoué");
+console.error("test échoué: getRandomInt3");
 process.exit(1);
 
 
 const test8 = rectIntersect(1,1,1,1,2,2,2,2);
 if (test8 === true) {
-  console.log("test réussi: collision");
+  console.log("test réussi: rectIntersect3");
 }
 else {
-  console.error("test échoué");
+  console.error("test échoué: rectIntersect3");
   process.exit(1);
 }
 
 const test9 = rectIntersect(2,2,2,2,1,1,1,1);
 if (test9 === true) {
-  console.log("test réussi: collision");
+  console.log("test réussi: rectIntersect4");
 }
 else {
-  console.error("test échoué");
+  console.error("test échoué: rectIntersect4");
   process.exit(1);
 }
 
@@ -111,16 +120,16 @@ function timeToString(time) {
 
 const test10 = timeToString(123456789);
 if (test10 === "17:36:78") {
-  console.log("test réussi");
+  console.log("test réussi: timeToString1");
 } else {
-  console.error("test échoué");
+  console.error("test échoué: timeToString1");
   process.exit(1)
 }
 
 const test11 = timeToString("toto");
 if (test11 === "NaN:NaN:NaN") {
-  console.log("test réussi");
+  console.log("test réussi: timeToString2");
 }
 else {
-  console.error("test échoué");
+  console.error("test échoué timeToString2");
 }
