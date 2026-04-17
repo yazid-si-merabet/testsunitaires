@@ -84,6 +84,7 @@ if (test7 === 50) {
 }
 
 
+
 const test8 = rectIntersect(1,1,1,1,2,2,2,2);
 if (test8 === true) {
   console.log("test réussi: rectIntersect3");
@@ -137,3 +138,5 @@ if (test11 === "NaN:NaN:NaN") {
 else {
   console.error("test échoué timeToString2");
 }
+
+//aaa
