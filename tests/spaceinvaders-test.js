@@ -159,6 +159,13 @@ else {
     process.exit(1);
 }
 
+export function add(a, b) {
+  return {
+    x: a.x + b.x,
+    y: a.y + b.y
+  };
+}
+
 const test15 = add({ x: 5, y: 50 },{ x: 10, y: 100 });
 if (test15.x === 15 && test15.y === 150) {
     console.log("test add1 réussi");
