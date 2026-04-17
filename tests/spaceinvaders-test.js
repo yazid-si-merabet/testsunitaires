@@ -49,7 +49,13 @@ export function distance(a, b) {
   return Math.sqrt(a.radius ** 2 + b.radius ** 2 - 2 * a.radius * b.radius * Math.cos(a.angle - b.angle));
 }
 
-const test5 = distance({ angle: 5, radius: 50 },{ angle: 10, radius: 100 })
+const test5 = distance({ angle: 5, radius: 50 },{ angle: 10, radius: 100 });
+if (test5 === 98.30248290540649) {
+    console.log("test distance réussi");
+}
+else {
+    console.error("test distance échoué");
+}
 
 
 const test6 = clamp(5, 5, 5)
