@@ -5,19 +5,19 @@ export function clamp(min, max, v) {
 
 const test1 = clamp(1,10,2);
 if (test1 === 2) {
-    console.log("test clamp réussi");
+    console.log("test clamp1 réussi");
 }
 else {
-    console.error("test clammp échoué");
+    console.error("test clamp échoué");
     process.exit(1);
 }
 
 const test2 = clamp(1,10,-12);
 if (test2 === 1) {
-    console.log("test réussi");
+    console.log("test clamp2 réussi");
 }
 else {
-    console.error("test échoué");
+    console.error("test clamp2 échoué");
     process.exit(1);
 }
 
@@ -28,20 +28,20 @@ export function lerp(start, end, v) {
 
 const test3 = lerp(1,10,2);
 if (test3 === 19) {
-    console.log("test réussi");
+    console.log("test lerp1 réussi");
 }
 else {
-    console.error("test échoué");
+    console.error("test lerp1 échoué");
     process.exit(1);
 }
 
 
 const test4 = lerp(1,10,-12);
 if (test4 === -107) {
-    console.log("test réussi");
+    console.log("test lerp2 réussi");
 }
 else {
-    console.error("test échoué");
+    console.error("test lerp2 échoué");
     process.exit(1);
 }
 
@@ -60,10 +60,10 @@ else {
 
 const test6 = clamp(5, 5, 5)
 if (test6 === 5) {
-    console.log("test réussi");
+    console.log("test clamp3 réussi");
 }
 else {
-    console.error("test échoué");
+    console.error("test clamp3 échoué");
     process.exit(1);
 }
 
@@ -72,29 +72,29 @@ else {
 
 const test8 = lerp(100, 3, -60);
 if (test8 === 5920) {
-    console.log("test réussi");
+    console.log("test lerp3 réussi");
 }
 else {
-    console.error("test échoué");
+    console.error("test lerp3 échoué");
     process.exit(1);
 }
 
 const test9 = clamp(0, 0, 0);
 
 if (test9 === 0) {
-    console.log("test réussi");
+    console.log("test clamp4 réussi");
 }
 else {
-    console.error("test échoué");
+    console.error("test clamp4 échoué");
     process.exit(1);
 }
 
 const test10 = clamp(-5, 100, -13);
 if (test10 === -5) {
-    console.log("test réussi")
+    console.log("test clamp5 réussi")
 }
 else {
-    console.error("test échoué");
+    console.error("test clamp5 échoué");
     process.exit(1);
 }
 
@@ -107,20 +107,20 @@ export function toVector(polarVector) {
 
 const test11 = toVector({ angle: 5, radius: 50 },{ angle: 10, radius: 100 });
 if (test11 === "{x: 14.183109273161312, y: -47.946213733156924}") {
-    console.log("test réussi");
+    console.log("test toVector1 réussi");
 }
 else {
-    console.error("test échoué");
+    console.error("test toVector1 échoué");
     process.exit(1);
 }
 
 const test12 = distance({ angle: 5, radius: 50 },{ angle: -10, radius: 100 });
 
 if (test12 === 141.76346189546945) {
-    console.log("test réussi")
+    console.log("test distance 2 réussi")
 }
 else {
-    console.error("test échoué");
+    console.error("test distance2 échoué");
     process.exit(1);
 }
 
@@ -134,9 +134,9 @@ export function normalize(vector) {
 
 test13 = normalize({ x: 5, y: 50 });
 if (test13.x ===  0.09950371902099892 && test13.y === 0.9950371902099892) {
-    console.log("test réussi");
+    console.log("test normalize1 réussi");
 }
-console.error("test échoué");
+console.error("test normalize1 échoué");
 process.exit(1);
 
 
@@ -146,18 +146,18 @@ export function dot(a, b) {
 
 const test14 = dot({ x: 5, y: 50 },{ x: 10, y: 100 });
 if (test14 === 5050) {
-    console.log("test réussi");
+    console.log("test dot1 réussi");
 }
 else {
-    console.error("test échoué");
+    console.error("test dot1 échoué");
     process.exit(1);
 }
 
 const test15 = add({ x: 5, y: 50 },{ x: 10, y: 100 });
 if (test15.x === 15 && test15.y === 150) {
-    console.log("test réussi");
+    console.log("test add1 réussi");
 }
-console.error("test échoué");
+console.error("test add1 échoué");
 process.exit(1);
 
 
@@ -170,9 +170,9 @@ export function subtract(a, b) {
 
 const test16 = subtract({ x: 5, y: 50 },{ x: 10, y: 100 });
 if (test16.x ===  -5 && test16.y === -50) {
-    console.log("test réussi");
+    console.log("test subtract1 réussi");
 }
 else {
-    console.error("test échoué");
+    console.error("test subtract1 échoué");
     process.exit(1);
 }
