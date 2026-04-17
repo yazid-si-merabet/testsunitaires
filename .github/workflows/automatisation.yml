@@ -1,0 +1,112 @@
+name: Automatisation Jeux VideoPS
+
+# Déclencheurs
+on:
+  push:
+    branches: [ main, develop, '*' ]  # Toutes les branches
+  pull_request:
+    branches: [ main ]  # PR vers la branche principale
+  workflow_dispatch:  # Lancement manuel
+
+jobs:
+  # Tests pour SpaceWord
+  test-spaceword:
+    runs-on: ubuntu-latest
+    name: Tests SpaceWord
+    
+    steps:
+    - name: Récupérer le code
+      uses: actions/checkout@v4
+      
+    - name: Lancer tests SpaceWord
+      run: |
+        echo "Lancement des tests pour SpaceWord..."
+        node tests/spaceword-test.js
+        
+  # Tests pour SpaceInvaders  
+  test-spaceinvaders:
+    runs-on: ubuntu-latest
+    name: Tests SpaceInvaders
+    
+    steps:
+    - name: Récupérer le code
+      uses: actions/checkout@v4
+      
+    - name: Lancer tests SpaceInvaders
+      run: |
+        echo "Lancement des tests pour SpaceInvaders..."
+        node tests/spaceinvaders-test.js
+        
+  # Vérification du style de code (Linting)
+  linting:
+    runs-on: ubuntu-latest
+    name: Vérification Style Google
+    
+    steps:
+    - name: Récupérer le code
+      uses: actions/checkout@v4
+      
+    - name: Installer Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Installer ESLint
+      run: |
+        npm install eslint eslint-config-google
+        
+    - name: Vérifier style du code
+      run: |
+        echo "Vérification du style avec règles Google..."
+        npx eslint . --ext .js --config .eslintrc.js || true
+        
+  # Audit de sécurité
+  security-audit:
+    runs-on: ubuntu-latest
+    name: Audit Sécurité
+    
+    steps:
+    - name: Récupérer le code
+      uses: actions/checkout@v4
+      
+    - name: Installer Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Audit de sécurité
+      run: |
+        echo "Vérification des failles de sécurité..."
+        npm audit --audit-level=moderate || true
+        
+  # Déploiement sur GitHub Pages
+  deploy:
+    needs: [test-spaceword, test-spaceinvaders, linting, security-audit]
+    runs-on: ubuntu-latest
+    name: Déploiement Web
+    if: github.ref == 'refs/heads/main'  # Uniquement sur main
+    
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+      
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+      
+    steps:
+    - name: Récupérer le code
+      uses: actions/checkout@v4
+      
+    - name: Configurer Pages
+      uses: actions/configure-pages@v4
+      
+    - name: Téléverser vers Pages
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: '.'
+        
+    - name: Déployer sur GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4

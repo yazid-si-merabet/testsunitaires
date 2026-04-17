@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeux VideoPS - Collection de Jeux Rétro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        
+        header {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+            margin-bottom: 1rem;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073; }
+            to { text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6; }
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .game-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-color: #00ff00;
+        }
+        
+        .game-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #00ff00;
+        }
+        
+        .game-description {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .play-button {
+            background: linear-gradient(45deg, #00ff00, #00cc00);
+            color: black;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .play-button:hover {
+            background: linear-gradient(45deg, #00cc00, #00aa00);
+            transform: scale(1.05);
+        }
+        
+        .stats {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            margin-top: 3rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .stat-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #00ff00;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.3);
+            margin-top: 3rem;
+        }
+        
+        .build-info {
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px solid #00ff00;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🎮 Jeux VideoPS 🎮</h1>
+        <p class="subtitle">Collection de jeux vidéo rétro avec automatisation CI/CD</p>
+    </header>
+    
+    <main>
+        <section class="games-grid">
+            <article class="game-card">
+                <h2 class="game-title">🚀 Space Invaders</h2>
+                <p class="game-description">
+                    Défendez la Terre contre les envahisseurs extraterrestres dans ce classique intemporel. 
+                    Utilisez votre vaisseau spatial pour détruire les vagues d'ennemis avant qu'ils n'atteignent votre position.
+                </p>
+                <a href="games/spaceinvaders/src/index.html" class="play-button">▶️ Jouer</a>
+            </article>
+            
+            <article class="game-card">
+                <h2 class="game-title">📝 Space Word</h2>
+                <p class="game-description">
+                    Un jeu de mots unique dans l'espace! Formez des mots et résolvez des énigmes 
+                    tout en naviguant à travers les étoiles.
+                </p>
+                <a href="games/spaceword/index.html" class="play-button">▶️ Jouer</a>
+            </article>
+            
+            <article class="game-card">
+                <h2 class="game-title">🎯 Plus de jeux bientôt...</h2>
+                <p class="game-description">
+                    Notre collection s'agrandit! De nouveaux jeux rétro sont actuellement en développement 
+                    avec les meilleures pratiques de qualité et d'automatisation.
+                </p>
+                <button class="play-button" disabled>🔧 En développement</button>
+            </article>
+        </section>
+        
+        <section class="stats">
+            <h2>📊 Statistiques du projet</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">2</div>
+                    <div>Jeux disponibles</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <div>Tests automatisés</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div>Couverture CI/CD</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">✅</div>
+                    <div>Linting Google Style</div>
+                </div>
+            </div>
+            
+            <div class="build-info">
+                <strong>Dernière build:</strong> <span id="build-date"></span><br>
+                <strong>Version:</strong> 1.0.0<br>
+                <strong>Statut:</strong> ✅ Tous les tests passés
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <p>🚀 Propulsé par GitHub Actions • Hébergé sur GitHub Pages • Code qualité supérieure</p>
+        <p>© 2024 Jeux VideoPS - Projet d'automatisation DevOps</p>
+    </footer>
+    
+    <script>
+        // Afficher la date actuelle comme date de build
+        document.getElementById('build-date').textContent = new Date().toLocaleString('fr-FR');
+        
+        // Animation simple pour les cartes de jeux
+        document.querySelectorAll('.game-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

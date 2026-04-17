@@ -1,0 +1,20 @@
+{
+  "name": "jeux-videops",
+  "version": "1.0.0",
+  "description": "Projet de jeux vidéo rétro avec automatisation CI/CD",
+  "scripts": {
+    "test": "node tests/spaceinvaders-test.js && node tests/spaceword-test.js && node tests/additional-unit-tests.js && node tests/functional-tests.js",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
+    "audit": "npm audit",
+    "build": "echo 'Building games...' && cd games/spaceinvaders && npm run build",
+    "start": "echo 'Starting development server...'"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "eslint-config-google": "^0.14.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
