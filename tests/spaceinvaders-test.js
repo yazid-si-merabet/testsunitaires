@@ -181,7 +181,7 @@ export function subtract(a, b) {
     x: a.x - b.x,
     y: a.y - b.y
   };
-}$
+}
 
 const test16 = subtract({ x: 5, y: 50 },{ x: 10, y: 100 });
 if (test16.x ===  -5 && test16.y === -50) {
