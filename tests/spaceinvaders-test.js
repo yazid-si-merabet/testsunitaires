@@ -106,7 +106,7 @@ export function toVector(polarVector) {
 }
 
 const test11 = toVector({ angle: 5, radius: 50 },{ angle: 10, radius: 100 });
-if (test11 === "{x: 14.183109273161312, y: -47.946213733156924}") {
+if (test11.x === 14.183109273161312, test11.y === -47.946213733156924) {
     console.log("test toVector1 réussi");
 }
 else {
