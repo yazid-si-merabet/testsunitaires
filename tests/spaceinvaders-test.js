@@ -5,10 +5,10 @@ export function clamp(min, max, v) {
 
 const test1 = clamp(1,10,2);
 if (test1 === 2) {
-    console.log("test réussi");
+    console.log("test clamp réussi");
 }
 else {
-    console.error("test échoué");
+    console.error("test clammp échoué");
     process.exit(1);
 }
 
