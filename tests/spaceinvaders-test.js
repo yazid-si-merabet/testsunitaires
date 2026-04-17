@@ -136,7 +136,7 @@ export function normalize(vector) {
   };
 }
 
-test13 = normalize({ x: 5, y: 50 });
+const test13 = normalize({ x: 5, y: 50 });
 if (test13.x ===  0.09950371902099892 && test13.y === 0.9950371902099892) {
     console.log("test normalize1 réussi");
 }
