@@ -139,6 +139,8 @@ else {
   console.error("test échoué timeToString2");
 }
 
+const characters ='abcdefghijklmnopqrstuvwxyz';
+
 function generateString(length) {
     let result = '';
     const charactersLength = characters.length;
